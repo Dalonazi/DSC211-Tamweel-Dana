@@ -1,0 +1,16 @@
+{
+  "source": "LIVE",
+  "responses": {
+    "threshold_reason": "The selected threshold is 0.6583 because it is the minimum-loss decision rule that remains feasible under the 12% operational capacity ",
+    "cost_capacity_tradeoff": "Threshold selection balances the cost of missed defaults against the operational capacity available to review flagged requests. Lowering the threshold can capture more positives but flags more applications and can exceed the 12% review-capacity limit. Sensitivity analysis also shows that the same threshold remains selected when false-negative cost is varied from 8 to 12, although the resulting loss changes from 2,185 to 3,093 units.",
+    "regional_gap": "Using the same shared threshold, the observed false-positive rates are 8.09% for central, 8.29% for western, 7.72% for eastern, and 7.64% for other. The maximum observed FPR gap is about 0.648 percentage points. All groups have more than 1,000 negative cases, so none receives the low-support warning. These are descriptive group differences and should not be interpreted as a statistical significance test, fairness certification, or causal effect of region.",
+    "limitations": "The decision analysis is based on out-of-fold development predictions from 5,039 synthetic requests rather than an independent final test. The scores are not calibrated probabilities, so the theoretical cost-based threshold formula cannot be applied directly.",
+    "why_accuracy_misleads": "Accuracy is misleading because defaults are relatively rare. A rule that flags nobody achieves 92.38% accuracy on the 5,039 requests while recall is 0, meaning it identifies none of the positive cases. The weighted and oversampled strategies both have much lower accuracy of about 7.62% at the illustrative 0.5 threshold but recall around 0.80. Therefore accuracy alone hides the trade-off between detecting positives and generating false positives in this imbalanced problem.",
+    "why_oof": "Threshold selection uses out-of-fold predictions so that each request is scored by a model that was not trained on that request. This reduces the optimistic bias that would result from choosing a threshold using training predictions. However, these OOF predictions are still development evidence and are not an independent final test."
+  },
+  "checkpoint": {
+    "status": "READY_FOR_REVIEW",
+    "missing": [],
+    "automatic_grade": null
+  }
+}

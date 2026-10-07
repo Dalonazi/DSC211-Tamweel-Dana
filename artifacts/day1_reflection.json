@@ -1,0 +1,21 @@
+{
+  "problem_statement": " The objective is to predict whether an applicant will default within 90 days, using information available at the application decision point. The model is intended for the course's synthetic financing-risk teaching use, where the goal is to compare candidate classification models before moving to more rigorous validation and decision-policy analysis in later labs. ",
+  "candidate": "XGBoost",
+  "notes": {
+    "evidence": " XGBoost is selected provisionally because it achieved the highest Average Precision (AP) of 0.3338, compared with 0.3258 for Logistic Regression and 0.3248 for LightGBM.\nThis is particularly relevant because the comparison sample has a default rate of only 7.9%, making precision-recall performance important for evaluating the minority class.\n",
+    "limitation": "\nThe observed differences cannot establish that XGBoost is generally superior.\nThe split diagnostic also reports 1,226 customers shared between the\ndevelopment and comparison sets, which means it is not customer-independent. In addition, the comparison does not establish\nprobability calibration, operational value, or performance stability\nacross time. These limitations require the more rigorous validation\nframework.\n",
+    "next_test": "\nThe next test is to evaluate whether XGBoost's AP advantage remains\ncredible under a validation framework, including\ncustomer separation and time ordering. I would compare performance across\nthe later validation periods rather than relying on this single comparison\nsplit.\n"
+  },
+  "exit_answers": [
+    " Average Precision should be inspected alongside ROC-AUC because the default class represents only 7.9% of the comparison sample. ROC-AUC evaluates how well the model ranks positive cases above negative cases across thresholds, while AP focuses on the precision-recall performance of the positive class.\nThis distinction is visible in this run: Logistic Regression has the highest ROC-AUC at 0.8213, whereas XGBoost has the highest AP at 0.3338. Therefore, considering only ROC-AUC would hide an important difference in minority-class performance. ",
+    "",
+    "The comparison set must remain separate from the data used for model\nfitting and early stopping so that it can provide a more independent\ncomparison of the candidate models. If comparison performance were repeatedly\nused to tune model settings or choose the stopping point, the models would\nindirectly get leaked data to that set and its reported performance would become\noptimistically biased.\n"
+  ],
+  "checkpoint": {
+    "status": "LEARNER_WORK_REQUIRED",
+    "missing": [
+      "Answer both exit questions."
+    ],
+    "automatic_grade": null
+  }
+}
