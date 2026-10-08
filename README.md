@@ -567,18 +567,13 @@ the final decision.
 
 ### 📓 Executed Notebooks
 
-| Stage | Notebook |
+| Notebook |
 |---|---|
-| Baseline modelling | [01_baseline_boosting.ipynb](notebooks/01_baseline_boosting.ipynb) |
-| Validation & tuning | [02_validation_tuning.ipynb](notebooks/02_validation_tuning.ipynb) |
-| Cost-sensitive decision | [03_cost_sensitive_decision.ipynb](notebooks/03_cost_sensitive_decision.ipynb) |
-| Explainability & calibration | [04_explain_calibrate.ipynb](notebooks/04_explain_calibrate.ipynb) |
-| Final model | [05_final_model.ipynb](notebooks/05_final_model.ipynb) |
+| Baseline modelling | [Full project Notebook](notebooks/DSC211_Tamweel_Dana.ipynb) |
 
-### 📊 Evidence & Artifacts
+### 📊 Artifacts
 
 - [Model and validation artifacts](artifacts/)
-- [Earlier-day learner evidence](evidence/)
 
 ### 📑 Technical Documentation
 
@@ -596,43 +591,41 @@ the final decision.
 # Technical Architecture
 
 ```text
-tamweel/
+DSC211-Tamweel-Dana/
 │
 ├── README.md
-├── requirements-colab.txt
 ├── constraints.txt
+├── requirements-colab.txt
+├── day4_artifacts.zip
 │
-├── notebooks/
-│ ├── 01_baseline_boosting.ipynb
-│ ├── 02_validation_tuning.ipynb
-│ ├── 03_cost_sensitive_decision.ipynb
-│ ├── 04_explain_calibrate.ipynb
-│ └── 05_final_model.ipynb
-│
-├── artifacts/
-│ ├── final_model/
-│ ├── metrics
-│ ├── predictions
-│ └── visualisations
-│
-├── evidence/
-│ ├── day1/
-│ ├── day2/
-│ ├── day3/
-│ └── day4/
-│
-├── reports/
-│ ├── MODEL_CARD.md
-│ └── ENSEMBLE_DECISION.md
-│
-├── submission/
-│ └── submission.csv
-│
-├── presentation/
-│ └── final_presentation.pdf
+├── Notebooks/
+│   └── *.ipynb
 │
 ├── data/
-└── scripts/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+│   └── *.py
+│
+├── artifacts/
+│   ├── models/
+│   ├── plots/
+│   ├── metrics/
+│   └── outputs/
+│
+├── evidence/
+│   └── day4/
+│       └── screenshots / validation evidence
+│
+├── reports/
+│   └── project reports
+│
+├── presentation/
+│   └── project presentation
+│
+└── submission/
+    └── final submission files
 ```
 
 ---
@@ -788,3 +781,7 @@ responsibilities.
 
 **Validate → Predict → Explain → Decide → Monitor**
 
+## Training Programme
+This project was developed as part of the SDAIA Academy training programme:
+**SDA-DSC-211 — Advanced Machine Learning Methods**
+SDAIA Academy GitHub: [SDAIA Academy](https://github.com/SDAIAAcademy)
